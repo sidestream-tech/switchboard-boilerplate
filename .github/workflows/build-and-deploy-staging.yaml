@@ -44,15 +44,15 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-   - name: Build and Push switchboard-frontend
+    - name: Build and Push switchboard-frontend
       uses: docker/build-push-action@v3
       with:
         context: ./frontend
         platforms: linux/amd64
         push: true
         tags: |
-          ghcr.io/sidestream-tech/switchboard/api:main
-          ghcr.io/sidestream-tech/switchboard/api:${{ github.sha }}
+          ghcr.io/sidestream-tech/switchboard/frontend:main
+          ghcr.io/sidestream-tech/switchboard/frontend:${{ github.sha }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
