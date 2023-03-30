@@ -65,5 +65,4 @@ resources:
 secrets:
   name: switchboard-frontend-staging-secrets
   data:
-    database_url: "postgres://postgres:postgres@postgresql:5432/postgres?sslmode=disable"
     jwt_secret:
