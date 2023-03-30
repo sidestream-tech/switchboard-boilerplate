@@ -78,5 +78,6 @@ jobs:
       - name: deploy to staging
         run:  |
             cd kubernetes/main.switchboard.k8s.sidestream.tech
+            chamber export switchboard/dev --format dotenv > .env
             aws eks update-kubeconfig --name eks-cluster-sidestream
             helmsman --apply --debug -f helmsman.yml

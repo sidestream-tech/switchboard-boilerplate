@@ -36,6 +36,7 @@ apps:
       "releaseTag": "$GITHUB_REF_NAME"
       "image.tag": "$COMMIT_SHA"
       "imageCredentials.password": "$GITHUB_PACKAGES_TOKEN"
+      "secrets.data.jwt_secret": "$JWT_SECRET"
 
   switchboard-frontend:
     namespace: "switchboard-staging"
@@ -55,6 +56,7 @@ apps:
       "releaseTag": "$GITHUB_REF_NAME"
       "image.tag": "$COMMIT_SHA"
       "imageCredentials.password": "$GITHUB_PACKAGES_TOKEN"
+      "secrets.data.jwt_secret": "$JWT_SECRET"
 
   postgresql:
     namespace: "switchboard-staging"
