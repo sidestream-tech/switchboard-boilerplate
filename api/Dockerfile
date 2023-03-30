@@ -19,5 +19,8 @@ COPY . .
 # Run in production mode
 ENV NODE_ENV=production
 
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+
 # initialize db and start the app
 CMD ["sh", "-c", "npx prisma db push && npm run start"]
