@@ -19,5 +19,5 @@ COPY . .
 # Run in production mode
 ENV NODE_ENV=production
 
-# start the app
-CMD [ "npm", "run", "start" ]
+# initialize db and start the app
+CMD ["sh", "-c", "npm prisma db push && npm run start"]
