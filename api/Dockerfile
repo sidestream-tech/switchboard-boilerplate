@@ -20,4 +20,4 @@ COPY . .
 ENV NODE_ENV=production
 
 # initialize db and start the app
-CMD ["sh", "-c", "npm prisma db push && npm run start"]
+CMD ["sh", "-c", "npx prisma db push && npm run start"]
