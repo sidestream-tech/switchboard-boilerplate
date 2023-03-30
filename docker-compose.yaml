@@ -10,6 +10,8 @@ services:
       - 3000
     env_file:
       - ./api/.env
+    environment:
+      DATABASE_URL: file:./db.sqlite
     command: >
       sh -c "
       cd /app &&
@@ -22,6 +24,8 @@ services:
       context: ./frontend
     expose:
       - 3000
+    environment:
+      DATABASE_URL: file:./db.sqlite
 
   reverse-proxy:
     restart: unless-stopped
