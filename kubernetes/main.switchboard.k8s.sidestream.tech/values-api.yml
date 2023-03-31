@@ -21,8 +21,8 @@ service:
     http:
       port: 3000
   healthcheck:
-    enabled: false
-    path: /api/healthz
+    enabled: true
+    path: /healthz
   env:
     - name: "AUTH_ORIGIN"
       value: "https://main.switchboard.k8s.sidestream.tech"

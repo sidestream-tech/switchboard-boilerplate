@@ -21,7 +21,7 @@ service:
     http:
       port: 3000
   healthcheck:
-    enabled: false
+    enabled: true
     path: /api/healthz
   env:
     - name: "AUTH_ORIGIN"
