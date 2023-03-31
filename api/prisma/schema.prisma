@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("PRISMA_CLIENT_OUTPUT")
+  url      = env("DATABASE_URL")
 }
 
 model CoreUnit {
