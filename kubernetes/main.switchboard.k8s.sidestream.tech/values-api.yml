@@ -67,5 +67,5 @@ secrets:
   name: switchboard-api-staging-secrets
   data:
     database_url: "postgres://postgres:postgres@postgresql:5432/postgres?sslmode=disable"
-    prisma_client_output: "/app/.output/server/node_modules/.prisma/client"
+    # prisma_client_output: "/app/.output/server/node_modules/.prisma/client"
     jwt_secret:

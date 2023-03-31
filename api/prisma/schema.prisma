@@ -1,7 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["clientExtensions"]
-  output = env("PRISMA_CLIENT_OUTPUT")
 }
 
 datasource db {
