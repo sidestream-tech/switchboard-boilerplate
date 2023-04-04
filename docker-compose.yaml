@@ -26,8 +26,11 @@ services:
       context: ./api
     environment:
       DATABASE_URL: postgres://postgres:postgres@database:5432/postgres?sslmode=disable
+      AUTH_SIGNUP_ENABLED: "1"
       JWT_SECRET: replace_in_production_with_actual_secret
       JWT_EXPIRATION_PERIOD_SECONDS: 3600
+    depends_on:
+      - database
 
   frontend:
     restart: unless-stopped
