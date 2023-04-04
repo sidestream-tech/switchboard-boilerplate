@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -38,5 +38,6 @@ model Session {
   isUserCreated       Boolean   @default(false)
 
   creator User @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+
   @@unique([createdBy, id])
 }
