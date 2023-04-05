@@ -30,6 +30,9 @@ jobs:
       id: vars
       run: echo "git_hash_short=$(git rev-parse --short ${GITHUB_SHA})" >> $GITHUB_OUTPUT
 
+    - name: Replace provider in prisma.schema
+      run: sed --in-place 's/sqlite/postgresql/g' api/prisma/schema.prisma
+
     - name: Build and Push switchboard-api
       uses: docker/build-push-action@v3
       with:
