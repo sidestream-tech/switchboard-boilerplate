@@ -24,8 +24,10 @@ service:
     enabled: true
     path: /healthz
   env:
-    - name: "AUTH_ORIGIN"
-      value: "https://main.switchboard.k8s.sidestream.tech"
+    - name: "AUTH_SIGNUP_ENABLED"
+      value: "1"
+    - name: "JWT_EXPIRATION_PERIOD_SECONDS"
+      value: "3600"
 
 podAutoscaler:
   minReplicas: 1
@@ -67,5 +69,4 @@ secrets:
   name: switchboard-api-staging-secrets
   data:
     database_url: postgres://postgres:postgres@postgresql:5432/postgres?sslmode=disable
-    # prisma_client_output: "/app/.output/server/node_modules/.prisma/client"
     jwt_secret:
